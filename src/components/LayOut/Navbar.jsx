@@ -35,10 +35,10 @@ const Navbar = () => {
         <Link to="/" className="hover:text-red-600 transition" data-aos="fade-up">
           Home
         </Link>
-        <Link to="/about" className="hover:text-red-600 transition" data-aos="fade-up" data-aos-delay="100">
+        <Link to="/aboutus" className="hover:text-red-600 transition" data-aos="fade-up" data-aos-delay="100">
           About
         </Link>
-        <Link to="/menu" className="hover:text-red-600 transition" data-aos="fade-up" data-aos-delay="200">
+        <Link to="/menulist" className="hover:text-red-600 transition" data-aos="fade-up" data-aos-delay="200">
           Menu
         </Link>
         <Link to="/contact" className="hover:text-red-600 transition" data-aos="fade-up" data-aos-delay="300">
@@ -95,10 +95,10 @@ const Navbar = () => {
           <Link to="/" className="hover:text-red-600 transition" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
-          <Link to="/about" className="hover:text-red-600 transition" onClick={() => setMenuOpen(false)}>
+          <Link to="/aboutus" className="hover:text-red-600 transition" onClick={() => setMenuOpen(false)}>
             About
           </Link>
-          <Link to="/menu" className="hover:text-red-600 transition" onClick={() => setMenuOpen(false)}>
+          <Link to="/menulist" className="hover:text-red-600 transition" onClick={() => setMenuOpen(false)}>
             Menu
           </Link>
           <Link to="/contact" className="hover:text-red-600 transition" onClick={() => setMenuOpen(false)}>

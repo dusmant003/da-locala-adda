@@ -54,7 +54,7 @@ const Hero = () => {
         }}
       >
         <img
-          src="https://cdn.pixabay.com/photo/2017/12/05/20/10/pizza-3000285_1280.png"
+          src="https://cdn.pixabay.com/photo/2017/12/05/20/10/pizza-3000285_1280.png    "
           alt="Rotating Pizza"
           className="w-56 h-56 lg:w-72 lg:h-72 object-cover rounded-full"
         />
