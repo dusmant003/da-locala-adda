@@ -1,5 +1,6 @@
 import React from 'react'
 import leaf from '../../assets/images/leaf.png'
+import { Link } from 'react-router-dom'
 
 const AboutUs = () => {
   return (
@@ -28,9 +29,12 @@ const AboutUs = () => {
           <h2 className='text-sm text-gray-800'>Restaurant owner</h2>
           <div className='flex justify-between gap-4'>
             <div>
-              <button className='border px-2 py-2 bg-red-600 text-white mt-6 hover:bg-transparent font-extrabold leading-tight hover:bg-black hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer' >
-                VISIT OUR RESTAURANT
-              </button>
+              <Link to='/reservation'
+              >
+                <button className='border px-4 py-4 bg-orange-600 rounded-full text-white mt-6 font-extrabold leading-tight hover:bg-black hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer' >
+                  VISIT OUR RESTAURANT
+                </button>
+              </Link>
             </div>
             <div className='hidden lg:flex md:flex'>
               <img src={leaf} alt="" className='h-20 animate-bounce' />

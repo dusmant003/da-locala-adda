@@ -61,8 +61,8 @@ const MenuCard = () => {
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
                             className={`px-5 py-2 rounded-full text-xs sm:text-sm font-medium uppercase border-2 transition ${activeCategory === cat
-                                ? "bg-red-600 text-white border-red-600"
-                                : "bg-white text-black border-gray-300 hover:bg-red-600 hover:text-white"
+                                ? "bg-orange-600 text-white border-orange-600"
+                                : "bg-white text-black border-gray-300 hover:bg-orange-500 hover:text-white"
                                 }`}
                         >
                             {cat}

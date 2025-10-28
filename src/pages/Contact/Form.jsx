@@ -113,7 +113,7 @@ const Form = () => {
             {/* Button */}
             <button
               type="submit"
-              className="w-full sm:w-auto bg-black text-white rounded-full px-8 py-4 font-semibold hover:bg-red-600 transition-all text-sm sm:text-base"
+              className="w-full sm:w-auto bg-orange-600 text-white rounded-full px-8 py-4 font-semibold hover:bg-black transition-all text-sm sm:text-base"
             >
               SEND MESSAGE NOW
             </button>
