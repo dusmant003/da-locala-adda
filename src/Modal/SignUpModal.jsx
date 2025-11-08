@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { X } from "lucide-react";
+import toast from "react-hot-toast";
 
 const UserSignUpModal = ({ isOpen, onClose, onSwitchToSignIn }) => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    // Handle Submit
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!name || !email || !password || !confirmPassword) {
+            toast.error("Please fill all fields!");
+            return; // add return to stop further code
+        }
+
+        if (password !== confirmPassword) {
+            toast.error("Passwords do not match!");
+            return;
+        }
+
+        toast.success("Account created successfully!");
+        console.log({
+            name,
+            email,
+            password,
+        });
+
+        // Reset form fields
+        setName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+
+        // Close modal after a short delay
+        setTimeout(onClose, 1000);
+    };
+
     if (!isOpen) return null;
 
     return (
@@ -18,13 +55,16 @@ const UserSignUpModal = ({ isOpen, onClose, onSwitchToSignIn }) => {
                     Create Account
                 </h2>
 
-                <form className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    {/* ✅ Corrected onChange handler */}
                     <div>
                         <label className="block text-gray-700 mb-1 text-sm font-medium">
                             Full Name
                         </label>
                         <input
                             type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                             placeholder="Enter your name"
                             className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                         />
@@ -36,6 +76,8 @@ const UserSignUpModal = ({ isOpen, onClose, onSwitchToSignIn }) => {
                         </label>
                         <input
                             type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
                             className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                         />
@@ -47,6 +89,8 @@ const UserSignUpModal = ({ isOpen, onClose, onSwitchToSignIn }) => {
                         </label>
                         <input
                             type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             placeholder="Enter password"
                             className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                         />
@@ -58,6 +102,8 @@ const UserSignUpModal = ({ isOpen, onClose, onSwitchToSignIn }) => {
                         </label>
                         <input
                             type="password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
                             placeholder="Re-enter password"
                             className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                         />
@@ -77,7 +123,7 @@ const UserSignUpModal = ({ isOpen, onClose, onSwitchToSignIn }) => {
                         className="text-orange-500 font-semibold cursor-pointer hover:underline"
                         onClick={() => {
                             onClose();
-                            onSwitchToSignIn(); // 👈 switch to SignIn
+                            onSwitchToSignIn();
                         }}
                     >
                         Sign In

@@ -52,15 +52,13 @@ const Navbar = () => {
         <Link to="/contact" className="hover:text-orange-600 transition" data-aos="fade-up" data-aos-delay="300">
           Contact
         </Link>
+        <Link to="/Galleries" className="hover:text-orange-600 transition" data-aos="fade-up" data-aos-delay="300">
+          Galleries
+        </Link>
       </nav>
 
       {/* Icons + Buttons */}
       <div className="hidden md:flex items-center gap-4">
-        {/* Search Icon */}
-        <div className="border border-gray-300 rounded-full p-2 cursor-pointer hover:border-red-500 transition" data-aos="zoom-in">
-          <Search className="w-5 h-5 text-black" />
-        </div>
-
         {/* Cart Icon */}
         <div className="relative border border-gray-300 rounded-full p-2 cursor-pointer hover:border-red-500 transition" data-aos="zoom-in">
           <ShoppingCart className="w-5 h-5 text-black" />
@@ -122,6 +120,9 @@ const Navbar = () => {
           <Link to="/contact" className="hover:text-orange-600 transition" onClick={() => setMenuOpen(false)}>
             Contact
           </Link>
+          <Link to="/Galleries" className="hover:text-orange-600 transition" onClick={() => setMenuOpen(false)}>
+            Galleries
+          </Link>
 
           {/* Mobile Icons */}
           <div className="flex items-center gap-6 mt-4">
@@ -151,7 +152,7 @@ const Navbar = () => {
               setIsUserSignUpModal(false); // ✅ close signup if open
             }}
             className="flex items-center gap-2 bg-orange-500 rounded-full text-white text-sm font-semibold uppercase px-5 py-2 hover:bg-black transition"
-            data-aos="fade-left"
+
           >
             <User className="w-5 h-5 text-white cursor-pointer" />
             <button className="uppercase">

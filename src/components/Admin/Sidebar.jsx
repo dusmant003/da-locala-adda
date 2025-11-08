@@ -18,77 +18,77 @@ const Sidebar = () => {
   const location = useLocation();
   const [openDropdown, setOpenDropdown] = useState(null);
 
-  // 🧩 Sidebar Menu Config
+  // ✅ Sidebar Menu Config (paths now match /adminportal routes)
   const menuItems = [
     {
       title: "Dashboard",
       icon: LayoutDashboard,
-      path: "admin/dashboard",
+      path: "/adminportal",
     },
     {
       title: "Menu",
       icon: UtensilsCrossed,
       children: [
-        { name: "Add Menu", path: "/admin/menu/add" },
-        { name: "View Menu", path: "/admin/menu/view" },
-        { name: "Categories", path: "/admin/menu/category" },
+        { name: "Add Menu", path: "/adminportal/menu/add" },
+        { name: "Menu List", path: "/adminportal/menu/list" },
+        { name: "Categories", path: "/adminportal/menu/category" },
       ],
     },
     {
       title: "Orders",
       icon: ShoppingBag,
       children: [
-        { name: "All Orders", path: "/admin/orders/all" },
-        { name: "Pending Orders", path: "/admin/orders/pending" },
-        { name: "Delivered Orders", path: "/admin/orders/delivered" },
+        { name: "All Orders", path: "/adminportal/orders/all" },
+        { name: "Pending Orders", path: "/adminportal/orders/pending" },
+        { name: "Delivered Orders", path: "/adminportal/orders/delivered" },
       ],
     },
     {
       title: "Delivery",
       icon: Bike,
       children: [
-        { name: "Delivery Staff", path: "/admin/delivery/staff" },
-        { name: "Assign Orders", path: "/admin/delivery/assign" },
-        { name: "Track Delivery", path: "/admin/delivery/track" },
+        { name: "Delivery Staff", path: "/adminportal/delivery/staff" },
+        { name: "Assign Orders", path: "/adminportal/delivery/assign" },
+        { name: "Track Delivery", path: "/adminportal/delivery/track" },
       ],
     },
     {
       title: "Staff",
       icon: Users,
       children: [
-        { name: "Add Staff", path: "/admin/staff/add" },
-        { name: "View Staff", path: "/admin/staff/view" },
+        { name: "Add Staff", path: "/adminportal/staff/add" },
+        { name: "View Staff", path: "/adminportal/staff/view" },
       ],
     },
     {
       title: "Customers",
       icon: UserCircle,
       children: [
-        { name: "All Customers", path: "/admin/customers/all" },
-        { name: "Feedbacks", path: "/admin/customers/feedback" },
+        { name: "All Customers", path: "/adminportal/customers/all" },
+        { name: "Feedbacks", path: "/adminportal/customers/feedback" },
       ],
     },
     {
       title: "Notifications",
       icon: Bell,
       children: [
-        { name: "Create", path: "/admin/notifications/create" },
-        { name: "View All", path: "/admin/notifications/view" },
+        { name: "Create", path: "/adminportal/notifications/create" },
+        { name: "View All", path: "/adminportal/notifications/view" },
       ],
     },
     {
       title: "Analytics",
       icon: BarChart3,
       children: [
-        { name: "Sales Report", path: "/admin/analytics/sales" },
-        { name: "Top Items", path: "/admin/analytics/top" },
+        { name: "Sales Report", path: "/adminportal/analytics/sales" },
+        { name: "Top Items", path: "/adminportal/analytics/top" },
       ],
     },
     {
       title: "Settings",
       icon: Settings,
       children: [
-        { name: "Profile", path: "/admin/settings/profile" },
+        { name: "Profile", path: "/adminportal/settings/profile" },
       ],
     },
   ];

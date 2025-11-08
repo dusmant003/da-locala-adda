@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -8,28 +7,30 @@ const SellerLoginModal = ({ isOpen, onClose }) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        //Open tab immediately (so browser allows it)
+        const newTab = window.open("", "_blank");
+
+        //Validate inputs
         if (!email || !password) {
             toast.error("Please fill in all fields");
+            newTab.close(); // close if invalid
             return;
         }
 
         console.log("Seller Login Data:", { email, password });
 
-        toast.success("Login Successfully");
+        //Simulate successful login
+        toast.success("Login Successful!");
 
+        //Reset & close modal instantly
         setEmail("");
         setPassword("");
-
-        setTimeout(() => {
-            onClose();
-            navigate("/adminportal")
-
-        }, 1500);
+        onClose();
+        newTab.location.href = "/adminportal";
     };
 
     return (
@@ -79,10 +80,7 @@ const SellerLoginModal = ({ isOpen, onClose }) => {
             </div>
 
             {/* Toast Container */}
-            <ToastContainer
-                position="top-right"
-                autoClose={2000}
-            />
+            <ToastContainer position="top-right" autoClose={2000} />
         </>
     );
 };
